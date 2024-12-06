@@ -1,0 +1,31 @@
+.forecast-container {
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+  }
+  
+  .forecast-grid {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+  }
+  
+  .forecast-card {
+    background-color: #ffffff;
+    padding: 15px;
+    border-radius: 6px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 100px;
+  }
+  
+  .forecast-card p {
+    margin: 5px 0;
+  }
+
+  .text-center  {
+    text-align: center;
+  }
