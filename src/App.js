@@ -11,21 +11,22 @@ function App() {
   const [forecast, setForecast] = useState(null);
   const [error, setError] = useState('');
 
-  const getBackgroundStyle = (mainWeather) => {
+  /*const getBackgroundStyle = (mainWeather) => {
     switch (mainWeather) {
       case 'Clear':
-        return { background: 'linear-gradient(to right, #f6d365, #fda085)', color: 'black' };
+        return 'linear-gradient(to bottom, #87CEEB, #fff)'; // Azul cielo
       case 'Clouds':
-        return { background: 'linear-gradient(to right, #bdc3c7, #2c3e50)', color: 'white' };
+        return 'linear-gradient(to bottom, #bdc3c7, #2c3e50)'; // Gris nublado
       case 'Rain':
-        return { background: 'linear-gradient(to right, #3a7bd5, #3a6073)', color: 'white' };
+        return 'linear-gradient(to bottom, #3a6073, #16222A)'; // Azul oscuro lluvioso
+      case 'Snow':
+        return 'linear-gradient(to bottom, #d7d2cc, #304352)'; // Blanco y gris
+      case 'Thunderstorm':
+        return 'linear-gradient(to bottom, #232526, #414345)'; // Gris tormentoso
       default:
-        return { background: 'white', color: 'black' };
+        return 'linear-gradient(to bottom, #8e9eab, #eef2f3)'; // Neutro
     }
-  };
-  
-  const appStyle = weather ? getBackgroundStyle(weather.weather[0].main) : {};
-  
+  }; */
   
   const handleSearch = async (city) => {
     const apiKey = process.env.REACT_APP_WEATHER_API_KEY;
@@ -59,13 +60,13 @@ function App() {
   };
   
 return (
-    <div>
-      <Header />
-      <Search onSearch={handleSearch} />
-      {error && <p className="error">{error}</p>}
-      {weather && <Weather data={weather} />}
-      {forecast && <Forecast forecastData={forecast} />}
-    </div>
+  <div> 
+    <Header />
+    <Search onSearch={handleSearch} />
+    {error && <p className="error">{error}</p>}
+    {weather && <Weather data={weather} />}
+    {forecast && <Forecast forecastData={forecast} />}
+  </div>
   );
 }
 

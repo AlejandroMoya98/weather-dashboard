@@ -1,31 +1,40 @@
 .forecast-container {
-    margin: 20px auto;
-    padding: 20px;
-    background-color: #f8f9fa;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    max-width: 600px;
-  }
-  
-  .forecast-grid {
-    display: flex;
-    justify-content: space-between;
-    gap: 10px;
-  }
-  
-  .forecast-card {
-    background-color: #ffffff;
-    padding: 15px;
-    border-radius: 6px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    width: 100px;
-  }
-  
-  .forecast-card p {
-    margin: 5px 0;
-  }
+  background: rgba(255, 255, 255, 0.9); /* Fondo blanco con ligera transparencia */
+  border-radius: 15px;
+  padding: 20px;
+  max-width: 800px; /* Ancho suficiente para una fila */
+  margin: 20px auto; /* Centrar el contenedor */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra elegante */
+  text-align: center;
+  color: #333; /* Texto en gris oscuro */
+}
 
-  .text-center  {
-    text-align: center;
-  }
+.forecast-grid {
+  display: flex; /* Cambiar a flexbox */
+  justify-content: space-between; /* Espaciado uniforme */
+  gap: 15px; /* Separación entre tarjetas */
+}
+
+.forecast-card {
+  background-color: #ffffff;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  min-width: 120px; /* Ancho mínimo */
+  flex: 1; /* Adaptar al espacio disponible */
+}
+
+.forecast-card p {
+   margin: 5px 0;
+}
+
+.text-center  {
+   text-align: center;
+}
+
+.weather-icon {
+  width: 50px;
+  height: 50px;
+  margin: 10px auto;
+}

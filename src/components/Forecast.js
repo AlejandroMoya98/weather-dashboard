@@ -29,9 +29,13 @@ function Forecast({ forecastData }) {
         {dailyForecasts.map((day) => (
           <div key={day.dt} className="forecast-card">
             <p>{new Date(day.dt_txt).toLocaleDateString()}</p>
-            <p>{translateDescription(day.weather[0].main)}</p>
-            <p>Temperatura: {day.main.temp}°C</p>
-            <p>Humedad: {day.main.humidity}%</p>
+            <p><strong>{translateDescription(day.weather[0].main)}</strong></p>
+            <img 
+             src={`https://openweathermap.org/img/wn/${day.weather[0].icon}@2x.png`} 
+             alt={day.weather[0].description} 
+             className="weather-icon"/>
+            <p><strong>Temperatura:</strong> {day.main.temp}°C</p>
+            <p><strong>Humedad:</strong> {day.main.humidity}%</p>
           </div>
         ))}
       </div>
