@@ -18,11 +18,18 @@
 .forecast-card {
   background-color: #ffffff;
   padding: 15px;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
   text-align: center;
   min-width: 120px; /* Ancho mínimo */
   flex: 1; /* Adaptar al espacio disponible */
+}
+
+.forecast-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 
 .forecast-card p {
