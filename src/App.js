@@ -4,11 +4,14 @@ import Header from './components/Header';
 import Search from './components/Search';
 import Weather from './components/Weather';
 import Forecast from './components/Forecast';
+import TemperatureChart from './components/TemperatureChart';
 
 function App() {
 
   const [weather, setWeather] = useState(null);
   const [forecast, setForecast] = useState(null);
+  const [chartData, setChartData] = useState(null); 
+  const [chartTitle, setChartTitle] = useState(''); // Estado para el título del gráfico
   const [error, setError] = useState('');
   const [message, setMessage] = useState('Obteniendo tu ubicación actual...');
 
@@ -76,6 +79,12 @@ function App() {
       setMessage('');
     }
   }, []); // `[]` garantiza que se ejecute una vez al cargar
+
+  // Manejar clic en Weather o Forecast para mostrar el gráfico
+  const handleCardClick = (data, title) => {
+    setChartData(data);
+    setChartTitle(title); // Actualizar el título del gráfico
+  };
   
 return (
   <div> 
@@ -83,8 +92,26 @@ return (
     <Search onSearch={handleSearch} />
     {message && <p className="message">{message}</p>}
     {error && <p className="error">{error}</p>}
-    {weather && <Weather data={weather} />}
-    {forecast && <Forecast forecastData={forecast} />}
+    <p className="hint">Pulsa en una tarjeta para ver el gráfico de temperaturas.</p>
+    {weather && forecast && (
+      <Weather
+         data={weather}
+         hourlyData={forecast.list.slice(0, 5)} 
+         onCardClick={(chartData, title) => handleCardClick(chartData, title)}
+      />
+    )}
+
+    {forecast && (
+      <Forecast
+        forecastData={forecast}
+        onCardClick={(day, title) => handleCardClick(day, title)}
+      />
+    )}
+    {chartData && (
+      <div className="chart-container">
+        <TemperatureChart chartData={chartData} chartTitle={chartTitle} />
+      </div>
+    )}
   </div>
   );
 }

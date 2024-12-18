@@ -25,6 +25,7 @@
   text-align: center;
   min-width: 120px; /* Ancho mínimo */
   flex: 1; /* Adaptar al espacio disponible */
+  cursor: pointer;
 }
 
 .forecast-card:hover {
