@@ -21,4 +21,16 @@ body {
   margin-top: 10px;
 }
 
-  
+/* Estilo para el mensaje de las tarjetas */
+.hint {
+  text-align: center; /* Centrar el texto */
+  font-size: 1.1rem; /* Tamaño de fuente moderado */
+  color: #555; /* Color gris oscuro para suavidad */
+  background-color: #f9f9f9; /* Fondo claro */
+  padding: 10px 20px; /* Espaciado interno */
+  margin: 20px auto; /* Espaciado superior/inferior */
+  border-radius: 8px; /* Bordes redondeados */
+  width: fit-content; /* Ajustar ancho al contenido */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+  font-family: 'Arial', sans-serif; /* Fuente moderna */
+}
